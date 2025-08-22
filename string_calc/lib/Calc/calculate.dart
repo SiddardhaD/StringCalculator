@@ -6,7 +6,11 @@ class Calculate {
     if (value.trim().isEmpty) {
       return 0;
     }
-    final listOfStringNumbers = value.split(',');
+
+    //  Replace newlines with commas, so both act as comma operator
+    final cleanedInput = value.replaceAll('\n', ',');
+
+    final listOfStringNumbers = cleanedInput.split(',');
     List<int> numbersList = [];
     for (var stringNumber in listOfStringNumbers) {
       final number = stringNumber.trim();
