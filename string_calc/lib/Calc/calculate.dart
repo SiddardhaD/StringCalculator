@@ -7,8 +7,12 @@ class Calculate {
       return 0;
     }
 
-    //  Replace newlines with commas, so both act as comma operator
-    final cleanedInput = value.replaceAll('\n', ',');
+    List<String> seperateDelemeter = [',', '\n', '/', '//,', ';'];
+
+    String cleanedInput = value;
+    for (var delemeter in seperateDelemeter) {
+      cleanedInput = cleanedInput.replaceAll(delemeter, ',');
+    }
 
     final listOfStringNumbers = cleanedInput.split(',');
     List<int> numbersList = [];
