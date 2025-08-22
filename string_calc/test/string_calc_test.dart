@@ -13,8 +13,17 @@ void main() {
     expect(greet.wish("Siddardha"), "Hello Siddardha");
   });
 
+  // test('should return 0 when adding empty string', () {
+  //   final calc = Calculate();
+  //   expect(calc.add(""), 0);
+  // });
+
+  // lets start asssesment
+  /// According to assesment, i need to pass string of comma-separated numbers
+  /// and Output: an integer, sum of the numbers
   test('should return 0 when adding empty string', () {
     final calc = Calculate();
-    expect(calc.add(""), 0);
+    //here i am passing a single argument, seperated by a comma of 2 numbers and expected value 3
+    expect(calc.add("1,5"), 6);
   });
 }
