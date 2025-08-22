@@ -26,10 +26,11 @@ void main() {
     //here i am passing a single argument, seperated by a comma and other delemeters also.
     //i am pasing below number based on assesment
     expect(
-      () => calc.add("11,-1"),
+      () => calc.add("-1,-1,22,23,-8"),
       throwsA(
         predicate(
-          (e) => e.toString().contains("Negative numbers not allowed: -1"),
+          (e) =>
+              e.toString().contains("Negative numbers not allowed: -1, -1, -8"),
         ),
       ),
     );
