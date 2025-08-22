@@ -23,7 +23,8 @@ void main() {
   /// and Output: an integer, sum of the numbers
   test('should return 0 when adding empty string', () {
     final calc = Calculate();
-    //here i am passing a single argument, seperated by a comma of 2 numbers and expected value 3
-    expect(calc.add("1,5"), 6);
+    //here i am passing a single argument, seperated by a comma of 1,2,3,4,5 numbers and expected value 20
+    // according to my test case it should fail, beacuse actual value is 15
+    expect(calc.add("1,2,3,4,5"), 20);
   });
 }
