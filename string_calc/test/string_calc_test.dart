@@ -25,6 +25,6 @@ void main() {
     final calc = Calculate();
     //here i am passing a single argument, seperated by a comma of 1,2,3,4,5 numbers and expected value 20
     // according to my test case it should fail, beacuse actual value is 15
-    expect(calc.add("1,2,3,4,5"), 20);
+    expect(calc.add("1,2,3,4,5"), 15);
   });
 }
