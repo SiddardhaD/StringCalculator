@@ -15,6 +15,6 @@ void main() {
 
   test('should return 0 when adding empty string', () {
     final calc = Calculate();
-    expect(calc.add("1"), 1);
+    expect(calc.add(""), 0);
   });
 }
