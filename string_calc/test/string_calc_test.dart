@@ -21,10 +21,17 @@ void main() {
   // lets start asssesment
   /// According to assesment, i need to pass string of comma-separated numbers
   /// and Output: an integer, sum of the numbers
-  test('should return 0 when adding empty string', () {
+  test('should throw Error when i pass negetive numbers', () {
     final calc = Calculate();
     //here i am passing a single argument, seperated by a comma and other delemeters also.
     //i am pasing below number based on assesment
-    expect(calc.add("//;\n1;2"), 3);
+    expect(
+      () => calc.add("11,-1"),
+      throwsA(
+        predicate(
+          (e) => e.toString().contains("Negative numbers not allowed: -1"),
+        ),
+      ),
+    );
   });
 }

@@ -15,6 +15,7 @@ class Calculate {
     }
 
     final listOfStringNumbers = cleanedInput.split(',');
+
     List<int> numbersList = [];
     for (var stringNumber in listOfStringNumbers) {
       final number = stringNumber.trim();
@@ -22,6 +23,14 @@ class Calculate {
         numbersList.add(int.parse(number));
       }
     }
+
+    // checking for negative numbers
+    final negatives = numbersList.where((number) => number < 0).toList();
+    if (negatives.isNotEmpty) {
+      print("Negative numbers not allowed: ${negatives.join(', ')}");
+      throw Exception("Negative numbers not allowed: ${negatives.join(', ')}");
+    }
+
     int sum = 0;
     for (var num in numbersList) {
       sum += num;
